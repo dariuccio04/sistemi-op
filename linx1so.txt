@@ -1,0 +1,34 @@
+ES1 linso
+1) cat /etc/hosts
+
+2)
+ cd /tmp
+ ls /home (assoluto)
+ ls ../home
+
+
+
+Quando sei nella directory /tmp:
+
+.. rappresenta la directory padre della directory corrente, cioè la directory radice /.
+../home quindi significa "vai alla directory padre (che è /), e poi entra nella directory home".
+
+3)
+SOFT LINK
+mkdir cart_prova
+cd cart-prova
+nano file_prova.txt
+ln -s file-prova.txt link_prova 
+cat link_prova   -> PRINTA BENE
+rm file_prova.txt
+cat link_prova  -> file o directory non esistente
+
+HARD LINK
+nano file_prova.txt
+ln file_prova.txt link_prova
+cat link_prova -> PRINTA BENE
+rm file_prova.txt
+cat link-prova -> PRINTA BENE
+
+4)
+rm cart_prova/*
