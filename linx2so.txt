@@ -1,0 +1,21 @@
+linx2so
+
+sudo groupadd belli
+(Se stai eseguendo questi comandi come utente con i privilegi di amministratore sul sistema, allora non è necessario utilizzare sudo. Tuttavia, se stai eseguendo i comandi come un utente non privilegiato e necessiti dei permessi di amministratore per eseguire operazioni come la creazione di gruppi e utenti, allora dovresti utilizzare sudo per ottenere temporaneamente tali privilegi)
+
+sudo useradd -m -g belli dario
+
+-m -> crea una dir home
+
+-g -> gruppo principale per il nuovo utente
+
+sudo chmod -R 777 /home/studente
+
+
+-R -> permessi di esecuzione
+
+777 -> 7 = 2*2 + 2 + 1 ( 111 )  7 a utente, gruppi e altri
+
+
+Un utente normale può listare i file nella home directory dell'utente "studente"?
+Dipende dai permessi impostati sulla home directory dell'utente "studente". Dopo aver eseguito i comandi sopra, poiché abbiamo modificato i permessi della home directory di "studente" in modo che tutti possano leggere, scrivere ed eseguire, un utente normale dovrebbe essere in grado di elencare i file in quella directory.
