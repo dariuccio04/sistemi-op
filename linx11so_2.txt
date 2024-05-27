@@ -1,0 +1,28 @@
+oribolla 2012 udine 21
+prosecco 2018 trieste 15
+barbera 2009 torino 20
+freisa 2010 torino 18
+barbera 2013 torino 14
+barolo 1984 alba 45
+
+#nome e anno del vino più caro 
+# mia logica: metto in ordine con sort per la quarta colonna (-k 4) e in base al numero (-n), di quello stampo il nome e anno
+
+#: cat vini.txt | sort -k 4 -n -r così ho ordinato le righe
+# stampo utilizzando cut -d " " -f 1-2
+# non stampo però solo la prima riga ma in effetti sto stampando tutte le righe
+
+
+# logica prof:
+# do il file tramite " < " che ci sta
+# ordino con sort -k4 -r 
+# ho tutto ordinato e prendo la prima riga e questo risultato lo do come input a head -1 per ottenere solo la prima riga e poi utilizza cut uguale
+# linea completa :
+# sort -k4 -r < vini.txt | head -1 | cut -d " " -f 1-2
+
+
+#per trovare i nomi dei vini di torino
+# io farei un for cercando in ogni riga la parola torino nella colonna 3 e se la trovo allora la aggiungo in una lista
+
+#giusta logica -> passo il contenuto di vini.txt, trovo torino con grep, "diciamo che ho la riga di torino
+#avendo la riga di torino allora con cut vado a stamparmi il nome, ordino i file ed elimino i duplicato con uniq
