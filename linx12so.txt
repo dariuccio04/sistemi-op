@@ -1,0 +1,23 @@
+luca 1985 milano
+martino 1990 torino
+giovanni 1971 trieste
+andrea 1984 milano
+
+
+numero di righe-> wc
+wc -l < linx12so.txt
+stiamo dando come input il file a wc -l
+
+cut linx12so.txt | cut -d " " -f 3 | uniq -c 
+vogliamo stampare solo un numero, sappiamo che per ogni riga ci sarà una città
+quindi se eliminiamo le città eliminiamo anche le righe
+quindi non utilizziamo uniq -c per contare le occorrenze ma usiamo solo uniq normale che eliminerà di default le occorrenze e poi andiamo a stampare le righe con wc -l
+
+
+cat linx12so.txt | cut -d " " -f 3 | sort | uniq -c | sort | tail -n 1 
+
+solita cazzata
+avrei sistemato i dati, contato il numero di occorrenze e iterato per vedeere la più grande
+ma bash è strunz
+
+quindi noi ci mettiamo sulla città, contiamo le occorrenze e sistemiamo le occorrenze con sort, saranno sistemate dal piu basso al piu alto e quindi prendiamo l'ultima riga con tail
